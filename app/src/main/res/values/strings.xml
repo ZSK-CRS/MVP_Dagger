@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MVP_Dagger</string>
+    <string name="double_click_exit_tint">再按一次后退键退出app</string>
 </resources>
