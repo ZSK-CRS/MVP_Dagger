@@ -7,6 +7,8 @@ import dagger.Module;
  * Date : 2019/5/30
  * Description :
  */
+
 @Module
-public class MainActivityModule {
+class MainActivityModule {
 }
+

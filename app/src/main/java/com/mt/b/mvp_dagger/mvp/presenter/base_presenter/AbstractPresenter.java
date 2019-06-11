@@ -1,4 +1,4 @@
-package com.mt.b.mvp_dagger.mvp.presenter;
+package com.mt.b.mvp_dagger.mvp.presenter.base_presenter;
 
 import com.mt.b.mvp_dagger.mvp.view.AbstractView;
 
@@ -22,6 +22,16 @@ public interface AbstractPresenter<T extends AbstractView> {
      * 回收View
      */
     void detachView();
+
+    /**
+     * 是否关联
+     */
+    boolean isAttach();
+
+    /**
+     * 获取View
+     */
+    T getView();
 
     /**
      * Add rxBing subscribe manager

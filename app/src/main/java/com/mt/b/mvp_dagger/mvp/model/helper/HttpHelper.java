@@ -1,6 +1,8 @@
 package com.mt.b.mvp_dagger.mvp.model.helper;
 
 
+import java.util.Map;
+
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 
@@ -18,4 +20,10 @@ public interface HttpHelper {
      * @return
      */
     Observable<ResponseBody> login(String userName,String password);
+
+    /**
+     * 登录
+     * @return
+     */
+    Observable<ResponseBody> getBaseMessage(Map<String,String> params);
 }

@@ -16,11 +16,12 @@ import me.yokeyword.fragmentation.SupportActivity;
 public abstract class AbstractSimpleActivity extends SupportActivity {
 
     private Unbinder unBinder;
-
+    protected AbstractSimpleActivity mActivity;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         unBinder = ButterKnife.bind(this);
+        mActivity = this;
         setContentView(getLayoutId());
         onViewCreate();
         initParams();

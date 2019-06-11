@@ -5,6 +5,7 @@ import com.mt.b.mvp_dagger.dagger.module.AbstractAllActivityModule;
 import com.mt.b.mvp_dagger.dagger.module.AbstractAllFragmentModule;
 import com.mt.b.mvp_dagger.dagger.module.AppModule;
 import com.mt.b.mvp_dagger.dagger.module.HttpModule;
+import com.mt.b.mvp_dagger.mvp.model.DataManager;
 
 import javax.inject.Singleton;
 
@@ -29,5 +30,18 @@ public interface AppComponent {
 
     //注入MyApplication实例
     void inject(MyApplication application);
+
+    /**
+     * 提供App的Context
+     * @return GeeksApp context
+     */
+    MyApplication getContext();
+
+    /**
+     * 数据中心
+     *
+     * @return DataManager
+     */
+    DataManager getDataManager();
 
 }

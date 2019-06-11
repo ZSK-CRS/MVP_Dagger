@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
-import com.mt.b.mvp_dagger.mvp.presenter.AbstractPresenter;
+import com.mt.b.mvp_dagger.mvp.presenter.base_presenter.AbstractPresenter;
 import com.mt.b.mvp_dagger.mvp.view.AbstractView;
 
 import javax.inject.Inject;
@@ -19,7 +19,7 @@ import dagger.android.support.HasSupportFragmentInjector;
  * Date : 2019/5/29
  * Description :  作视图的关联，销毁、Dagger的注入
  */
-public abstract class BaseActivity< T extends AbstractPresenter> extends AbstractSimpleActivity implements
+public abstract class BaseActivity<T extends AbstractPresenter> extends AbstractSimpleActivity implements
         HasSupportFragmentInjector,
         AbstractView {
 

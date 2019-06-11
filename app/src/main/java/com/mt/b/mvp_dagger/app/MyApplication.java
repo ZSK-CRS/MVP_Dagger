@@ -9,6 +9,7 @@ import com.mt.b.mvp_dagger.dagger.module.AppModule;
 import com.mt.b.mvp_dagger.dagger.module.HttpModule;
 import com.mt.b.mvp_dagger.db.gen.DaoMaster;
 import com.mt.b.mvp_dagger.db.gen.DaoSession;
+import com.mt.b.mvp_dagger.utils.ToastUtil;
 
 import javax.inject.Inject;
 
@@ -38,11 +39,13 @@ public class MyApplication extends Application implements HasActivityInjector {
     public void onCreate() {
         super.onCreate();
         instance = this;
+
         DaggerAppComponent.builder()
                 .appModule(new AppModule(instance))
                 .httpModule(new HttpModule())
                 .build()
                 .inject(this);
+        ToastUtil.init(this);
     }
 
 

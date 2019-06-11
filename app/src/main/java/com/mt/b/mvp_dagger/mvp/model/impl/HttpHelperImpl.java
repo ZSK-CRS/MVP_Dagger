@@ -3,6 +3,8 @@ package com.mt.b.mvp_dagger.mvp.model.impl;
 import com.mt.b.mvp_dagger.mvp.model.helper.HttpHelper;
 import com.mt.b.mvp_dagger.mvp.model.network.RetrofitService;
 
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
@@ -25,5 +27,10 @@ public class HttpHelperImpl implements HttpHelper {
     @Override
     public Observable<ResponseBody> login(String userName, String password) {
         return mRetrofitService.login(userName,password);
+    }
+
+    @Override
+    public Observable<ResponseBody> getBaseMessage(Map<String, String> params) {
+        return mRetrofitService.getBaseMessage(params);
     }
 }

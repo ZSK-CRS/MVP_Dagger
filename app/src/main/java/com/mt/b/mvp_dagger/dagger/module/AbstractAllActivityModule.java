@@ -16,5 +16,4 @@ public abstract class AbstractAllActivityModule {
 
     @ContributesAndroidInjector(modules = MainActivityModule.class)
     abstract MainActivity contributesMainActivityInjector();
-
 }

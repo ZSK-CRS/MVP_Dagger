@@ -1,9 +1,12 @@
 package com.mt.b.mvp_dagger.mvp.model.network;
 
+import java.util.Map;
+
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.ResponseBody;
 import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -26,6 +29,14 @@ public interface RetrofitService {
     @POST("user/login")
     @FormUrlEncoded
     Observable<ResponseBody> login(@Field("username") String username, @Field("password") String password);
+
+
+    /**
+     * 获取基本信息
+     */
+    @POST("user/login")
+    @FormUrlEncoded
+    Observable<ResponseBody> getBaseMessage(@FieldMap(encoded = true) Map<String,String> params);
 
 
    /* //上传图片

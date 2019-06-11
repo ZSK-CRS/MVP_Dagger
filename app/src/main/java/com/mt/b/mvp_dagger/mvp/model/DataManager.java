@@ -5,6 +5,8 @@ import com.mt.b.mvp_dagger.mvp.model.helper.DbHelper;
 import com.mt.b.mvp_dagger.mvp.model.helper.HttpHelper;
 import com.mt.b.mvp_dagger.mvp.model.helper.PreferenceHelper;
 
+import java.util.Map;
+
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 
@@ -64,5 +66,11 @@ public class DataManager implements HttpHelper, DbHelper, PreferenceHelper {
     public Observable<ResponseBody> login(String userName, String password) {
         return mHttpHelper.login(userName,password);
     }
+
+    @Override
+    public Observable<ResponseBody> getBaseMessage(Map<String, String> params) {
+        return mHttpHelper.getBaseMessage(params);
+    }
+
 
 }
