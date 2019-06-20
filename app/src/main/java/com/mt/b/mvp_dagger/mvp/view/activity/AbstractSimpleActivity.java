@@ -4,6 +4,8 @@ package com.mt.b.mvp_dagger.mvp.view.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import com.mt.b.mvp_dagger.mvp.view.ActivityCollector;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportActivity;
@@ -22,6 +24,7 @@ public abstract class AbstractSimpleActivity extends SupportActivity {
         super.onCreate(savedInstanceState);
         unBinder = ButterKnife.bind(this);
         mActivity = this;
+        ActivityCollector.getInstance().addActivity(this);
         setContentView(getLayoutId());
         onViewCreate();
         initParams();
@@ -33,6 +36,7 @@ public abstract class AbstractSimpleActivity extends SupportActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        ActivityCollector.getInstance().removeActivity(this);
         if (unBinder != null && unBinder != Unbinder.EMPTY) {
             unBinder.unbind();
             unBinder = null;

@@ -33,4 +33,9 @@ public class HttpHelperImpl implements HttpHelper {
     public Observable<ResponseBody> getBaseMessage(Map<String, String> params) {
         return mRetrofitService.getBaseMessage(params);
     }
+
+    @Override
+    public Observable<ResponseBody> getMyFragmentMessage(Map<String, String> params) {
+        return mRetrofitService.getMyFragmentMessage(params);
+    }
 }

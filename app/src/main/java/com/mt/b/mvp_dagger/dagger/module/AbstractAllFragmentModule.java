@@ -15,7 +15,6 @@ import dagger.android.ContributesAndroidInjector;
 public abstract class AbstractAllFragmentModule {
 
     @ContributesAndroidInjector(modules = MyFragmentModule.class)
-    abstract MyFragment contributesCollectFragmentInject();
-
+    abstract MyFragment contributesMyFragmentInject();
 
 }

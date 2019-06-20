@@ -72,5 +72,10 @@ public class DataManager implements HttpHelper, DbHelper, PreferenceHelper {
         return mHttpHelper.getBaseMessage(params);
     }
 
+    @Override
+    public Observable<ResponseBody> getMyFragmentMessage(Map<String, String> params) {
+        return mHttpHelper.getMyFragmentMessage(params);
+    }
+
 
 }

@@ -22,8 +22,14 @@ public interface HttpHelper {
     Observable<ResponseBody> login(String userName,String password);
 
     /**
-     * 登录
+     * 获取基础信息
      * @return
      */
     Observable<ResponseBody> getBaseMessage(Map<String,String> params);
+
+    /**
+     * 获取首页信息
+     * @return
+     */
+    Observable<ResponseBody> getMyFragmentMessage(Map<String,String> params);
 }

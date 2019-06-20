@@ -39,6 +39,13 @@ public interface RetrofitService {
     Observable<ResponseBody> getBaseMessage(@FieldMap(encoded = true) Map<String,String> params);
 
 
+    /**
+     * 获取基本信息
+     */
+    @POST("user/login")
+    @FormUrlEncoded
+    Observable<ResponseBody> getMyFragmentMessage(@FieldMap(encoded = true) Map<String,String> params);
+
    /* //上传图片
     @Multipart
     @POST("/Courier/CourierService/uploadCardImg")

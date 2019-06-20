@@ -7,5 +7,5 @@ package com.mt.b.mvp_dagger.mvp.view;
  */
 public interface AbstractView {
 
-    void showErroeMessage(String errorMessage);     //显示错误信息
+    void showErrorMessage(String errorMessage);     //显示错误信息
 }

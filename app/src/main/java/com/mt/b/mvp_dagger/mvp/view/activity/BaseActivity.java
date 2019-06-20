@@ -55,4 +55,9 @@ public abstract class BaseActivity<T extends AbstractPresenter> extends Abstract
     public AndroidInjector<Fragment> supportFragmentInjector() {
         return mFragmentDispatchingAndroidInjector;
     }
+
+    @Override
+    public void showErrorMessage(String errorMessage) {
+
+    }
 }

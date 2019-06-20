@@ -1,8 +1,8 @@
 package com.mt.b.mvp_dagger.mvp.presenter.presenter_impl;
 
-import com.mt.b.mvp_dagger.mvp.view.contract.MainContract;
 import com.mt.b.mvp_dagger.mvp.model.DataManager;
 import com.mt.b.mvp_dagger.mvp.presenter.base_presenter.BasePresenter;
+import com.mt.b.mvp_dagger.mvp.view.contract.MyFragmentContract;
 
 import java.util.Map;
 
@@ -13,25 +13,19 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 
-/**
- * Author : ZSK
- * Date : 2019/6/5
- * Description :
- */
-public class MainPresenter extends BasePresenter<MainContract.View> implements MainContract.Presenter {
+public class MyFragmentPresenter extends BasePresenter<MyFragmentContract.View> implements  MyFragmentContract.Presenter {
 
     private DataManager mDataManager;
 
     @Inject
-    public MainPresenter(DataManager dataManager) {
+    public MyFragmentPresenter(DataManager dataManager) {
         super(dataManager);
         this.mDataManager = dataManager;
     }
 
     @Override
     public void getBaseMessage(Map<String, String> params) {
-        // addSubscribe(Observable.zip(mLoginObservable, mBannerObservable, mArticleObservable, this::createResponseMap)
-        addSubscribe(mDataManager.getBaseMessage(params).subscribeOn(Schedulers.io())
+        addSubscribe(mDataManager.getMyFragmentMessage(params).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<ResponseBody>() {
                     @Override
@@ -45,5 +39,4 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
                     }
                 }));
     }
-
 }

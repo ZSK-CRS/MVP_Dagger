@@ -1,11 +1,12 @@
 package com.mt.b.mvp_dagger.ui.activity;
 
 import com.mt.b.mvp_dagger.R;
+import com.mt.b.mvp_dagger.mvp.presenter.presenter_impl.MainPresenter;
 import com.mt.b.mvp_dagger.mvp.view.contract.MainContract;
 import com.mt.b.mvp_dagger.mvp.view.activity.BaseActivity;
 import com.mt.b.mvp_dagger.utils.ToastUtil;
 
-public class MainActivity extends BaseActivity<MainContract.Presenter> implements MainContract.View {
+public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.View {
 
     @Override
     protected int getLayoutId() {
@@ -37,7 +38,7 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
     }
 
     @Override
-    public void showErroeMessage(String errorMessage) {
+    public void showErrorMessage(String errorMessage) {
 
     }
 }
