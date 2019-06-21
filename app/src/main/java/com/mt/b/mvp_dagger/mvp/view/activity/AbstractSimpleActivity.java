@@ -19,13 +19,14 @@ public abstract class AbstractSimpleActivity extends SupportActivity {
 
     private Unbinder unBinder;
     protected AbstractSimpleActivity mActivity;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(getLayoutId());
         unBinder = ButterKnife.bind(this);
         mActivity = this;
         ActivityCollector.getInstance().addActivity(this);
-        setContentView(getLayoutId());
         onViewCreate();
         initParams();
         initToolbar();
@@ -60,8 +61,5 @@ public abstract class AbstractSimpleActivity extends SupportActivity {
 
     //初始化监听事件
     protected void initListener(){};
-
-
-
 
 }

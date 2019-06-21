@@ -1,12 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".ui.activity.MainActivity">
 
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#1A000000" />
 
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff">
 
-</RelativeLayout>
+        <LinearLayout
+            android:id="@+id/main_tab_ll_first"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/main_tab_imgbt_first"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/main_tab_first_selector" />
+
+            <TextView
+                android:id="@+id/main_tab_tv_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="首页"
+                android:textColor="@drawable/main_tab_text_bg"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_tab_ll_store"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/main_tab_imgbt_store"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/main_tab_data_selector" />
+
+            <TextView
+                android:id="@+id/main_tab_tv_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="库存管理"
+                android:textColor="@drawable/main_tab_text_bg"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_tab_ll_my"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/main_tab_imgbt_my"
+                android:layout_width="20dp"
+                android:layout_height="23dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/main_tab_me_selector" />
+
+            <TextView
+                android:id="@+id/main_tab_tv_my"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的"
+                android:textColor="@drawable/main_tab_text_bg"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
