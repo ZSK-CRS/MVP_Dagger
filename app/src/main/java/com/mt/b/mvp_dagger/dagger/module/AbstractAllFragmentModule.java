@@ -16,13 +16,16 @@ import dagger.android.ContributesAndroidInjector;
 @Module(subcomponents = BaseFragmentComponent.class)
 public abstract class AbstractAllFragmentModule {
 
-    @ContributesAndroidInjector(modules = MyFragmentModule.class)
+   /* @ContributesAndroidInjector(modules = MyFragmentModule.class)
+    abstract MyFragment contributesMyFragmentInject();*/
+
+    @ContributesAndroidInjector
     abstract MyFragment contributesMyFragmentInject();
 
-    @ContributesAndroidInjector(modules = HomeFragmentModule.class)
+    @ContributesAndroidInjector
     abstract HomeFragment contributesHomeFragmentInject();
 
-    @ContributesAndroidInjector(modules = MainStoreFragmentModule.class)
+    @ContributesAndroidInjector
     abstract MainStoreFragment contributesMainStoreFragmentInject();
 
 }

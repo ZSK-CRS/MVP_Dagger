@@ -7,4 +7,6 @@
     <color name="white">#ffffff</color>
     <color name="press">#0da95f</color>
     <color name="normal">#777777</color>
+    <color name="grey_1">#dadada</color>
+    <color name="grey_2">#cc000000</color>
 </resources>

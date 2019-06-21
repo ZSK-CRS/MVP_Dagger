@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.mt.b.mvp_dagger.R;
 import com.mt.b.mvp_dagger.app.Constants;
 import com.mt.b.mvp_dagger.utils.CommonUtils;
+import com.mt.b.mvp_dagger.utils.ViewColor;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -24,15 +25,30 @@ public abstract class AbstractSimpleFragment extends SupportFragment {
     private Unbinder unBinder;
     private long clickTime;
     public boolean isInnerFragment;
+    private View mStatusBarView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(getLayoutId(), container, false);
+        ViewGroup view = (ViewGroup) inflater.inflate(getLayoutId(), container, false);
+        //addStatusBar(view);
         unBinder = ButterKnife.bind(this, view);
         initView();
         return view;
 
+    }
+
+    private void addStatusBar(ViewGroup view) {
+        if (mStatusBarView == null) {
+            mStatusBarView = new View(getContext());
+            int screenWidth = getResources().getDisplayMetrics().widthPixels;
+            int statusBarHeight = ViewColor.getStatusBarHeight(getActivity());
+            ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(screenWidth, statusBarHeight);
+            mStatusBarView.setLayoutParams(params);
+            mStatusBarView.requestLayout();
+            if (view != null)
+                view.addView(mStatusBarView, 0);
+        }
     }
 
     @Override

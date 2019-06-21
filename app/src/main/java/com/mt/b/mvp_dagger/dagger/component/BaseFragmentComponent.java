@@ -11,6 +11,7 @@ import dagger.android.AndroidInjector;
  * Date : 2019/5/30
  * Description :
  */
+
 @Subcomponent(modules = {AndroidInjectionModule.class})
 public interface BaseFragmentComponent extends AndroidInjector<BaseFragment>{
     /**
