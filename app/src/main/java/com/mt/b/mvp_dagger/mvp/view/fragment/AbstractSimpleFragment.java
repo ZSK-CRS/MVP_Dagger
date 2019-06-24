@@ -31,24 +31,10 @@ public abstract class AbstractSimpleFragment extends SupportFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup view = (ViewGroup) inflater.inflate(getLayoutId(), container, false);
-        //addStatusBar(view);
         unBinder = ButterKnife.bind(this, view);
         initView();
         return view;
 
-    }
-
-    private void addStatusBar(ViewGroup view) {
-        if (mStatusBarView == null) {
-            mStatusBarView = new View(getContext());
-            int screenWidth = getResources().getDisplayMetrics().widthPixels;
-            int statusBarHeight = ViewColor.getStatusBarHeight(getActivity());
-            ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(screenWidth, statusBarHeight);
-            mStatusBarView.setLayoutParams(params);
-            mStatusBarView.requestLayout();
-            if (view != null)
-                view.addView(mStatusBarView, 0);
-        }
     }
 
     @Override

@@ -9,4 +9,5 @@
     <color name="normal">#777777</color>
     <color name="grey_1">#dadada</color>
     <color name="grey_2">#cc000000</color>
+    <color name="grey_satuesColor">#c3c3c3</color>
 </resources>

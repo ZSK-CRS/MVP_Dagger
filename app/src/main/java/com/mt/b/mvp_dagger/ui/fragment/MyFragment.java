@@ -12,12 +12,17 @@ import com.mt.b.mvp_dagger.mvp.presenter.presenter_impl.MyFragmentPresenter;
 import com.mt.b.mvp_dagger.mvp.view.contract.MyFragmentContract;
 import com.mt.b.mvp_dagger.mvp.view.fragment.BaseFragment;
 
+import butterknife.BindView;
+
 /**
  * Author : ZSK
  * Date : 2019/5/30
  * Description :
  */
 public class MyFragment extends BaseFragment<MyFragmentPresenter> implements MyFragmentContract.View{
+
+    @BindView(R.id.fake_status_bar)
+    View mFakeStatusBar;
 
     @Override
     public void showRequestData(String data) {
@@ -36,14 +41,11 @@ public class MyFragment extends BaseFragment<MyFragmentPresenter> implements MyF
 
     @Override
     protected void initData() {
-        if (Build.VERSION.SDK_INT >= 21) {
-            View decorView = getActivity().getWindow().getDecorView();
-            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-            decorView.setSystemUiVisibility(option);
-            getActivity().getWindow().setStatusBarColor(Color.parseColor("#dadada"));
-        }
-      /*  ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
-        actionBar.hide();*/
+
+    }
+
+    @Override
+    protected void initView() {
+
     }
 }

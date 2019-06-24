@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jaeger.library.StatusBarUtil;
 import com.mt.b.mvp_dagger.R;
 import com.mt.b.mvp_dagger.mvp.presenter.presenter_impl.MainPresenter;
 import com.mt.b.mvp_dagger.mvp.view.contract.MainContract;
@@ -82,7 +83,8 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     protected void initToolbar() {
-
+       StatusBarUtil.setTranslucentForImageViewInFragment(MainActivity.this, null);
+       // StatusBarUtil.setTransparent(this);
     }
 
     @Override
@@ -167,6 +169,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
             System.exit(0);
         }
     }
+
 
     //############################################  View ##############################################################
     @Override

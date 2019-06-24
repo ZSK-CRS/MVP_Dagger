@@ -88,6 +88,7 @@ ext {
             "stetho-okhttp3"                    : "com.facebook.stetho:stetho-okhttp3:1.4.2",
             "PersistentCookieJar"               : "com.github.franmontiel:PersistentCookieJar:v1.0.1",
             "XUpdate"                           : "com.github.xuexiangjys:XUpdate:1.0.6",
+            "statusbarutil"                     : "com.jaeger.statusbarutil:library:1.5.1",
 
             //ui test
             "espresso-core"                     : "com.android.support.test.espresso:espresso-core:3.0.2",
